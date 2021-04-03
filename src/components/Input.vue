@@ -47,9 +47,23 @@
             <span>{{ errors[0] }}</span>
           </div>
         </ValidationProvider>
-        <ValidationProvider name="Gender" rules="required" v-slot="{ errors }">
-          <div class="form-check"></div>
+        <ValidationProvider
+          name="Accept Terms"
+          rules="required"
+          v-slot="{ errors }"
+        >
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              v-model="acceptTerms"
+            />
+            <label class="formchecklabel">Accept Terms</label>
+          </div>
+          <span>{{ errors[0] }}</span
+          ><br />
         </ValidationProvider>
+        <input type="submit" class="btn btn-primary mt-3" text="Submit" />
       </form>
     </ValidationObserver>
   </div>
